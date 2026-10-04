@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+locale: "ar"
+
+collections:
+  - name: "site"
+    label: "محتوى موقع السرادق"
+    files:
+      - file: "content/site.json"
+        label: "كل محتوى الموقع"
+        name: "site"
+        fields:
+          - { label: "الشريط العلوي (Tagline)", name: "tagline", widget: "string" }
+
+          - { label: "نص صغير فوق العنوان الرئيسي", name: "hero_eyebrow", widget: "string" }
+          - { label: "العنوان الرئيسي الكبير", name: "hero_headline", widget: "string" }
+          - { label: "الوصف تحت العنوان", name: "hero_sub", widget: "text" }
+
+          - { label: "اقتباس قسم من نحن", name: "about_quote", widget: "string" }
+          - { label: "فقرة قسم من نحن", name: "about_text", widget: "text" }
+
+          - label: "الخدمة الأولى"
+            name: "service1"
+            widget: "object"
+            fields:
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "الوصف القصير", name: "desc", widget: "string" }
+              - label: "البنود"
+                name: "items"
+                widget: "list"
+                field: { label: "بند", name: "item", widget: "string" }
+
+          - label: "الخدمة الثانية"
+            name: "service2"
+            widget: "object"
+            fields:
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "الوصف القصير", name: "desc", widget: "string" }
+              - label: "البنود"
+                name: "items"
+                widget: "list"
+                field: { label: "بند", name: "item", widget: "string" }
+
+          - label: "مجالات العمل (أسفل الخدمات)"
+            name: "fields_list"
+            widget: "list"
+            field: { label: "مجال", name: "field", widget: "string" }
+
+          - { label: "الموقع (العنوان)", name: "contact_location", widget: "string" }
+          - { label: "رقم الهاتف (للعرض فقط)", name: "contact_phone_display", widget: "string" }
+          - { label: "رقم واتساب (دولي، بدون + أو أصفار، مثال 9647xxxxxxxxx)", name: "contact_whatsapp", widget: "string" }
